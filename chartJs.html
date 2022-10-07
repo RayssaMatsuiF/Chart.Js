@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o ChartJs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body style="display: flex;">
+    <div>
+        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+      </div>    
+      
+      <div>
+        <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+      </div>   
+      <script>
+        const labels = [
+          'Janeiro',
+          'Fevereiro',
+          'Março',
+          'Abril',
+          'Maio',
+          'Junho',
+        ];
+      
+        const data = {
+          labels: labels,
+          datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [20+10, 30, 40-11, 50-25, 60-39, 70-48, 80, 90],
+          },
+          {
+            label: 'Umidade',
+            backgroundColor: 'rgb(0, 0, 255',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [20+60, 30+51, 40+40, 50+35, 60+25, 70+12, 80, 90],
+          }]
+        };
+
+        const data2 = {
+          labels: labels,
+          datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0+21, 10+15, 20+9, 30-9, 40-20, 50-31, 60, 70, 80, 90, 100],
+          },
+          {
+            label: 'Umidade Média',
+            backgroundColor: 'rgb(0, 0, 255',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [0+90, 10+79, 20+73, 30+56, 40+47, 50+32, 60, 70, 80, 90, 100],
+          }]
+        };
+      
+        const config = {
+          type: 'line',
+          data: data,
+          options: {}
+        };
+
+        const config2 = {
+          type: 'bar',
+          data: data2,
+          options: {}
+        };
+      </script>
+
+
+<script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    const myChart2 = new Chart(
+      document.getElementById('myChart2'),
+      config2
+    );
+  </script>
+  
+  
+</body>
+</html>
